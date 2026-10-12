@@ -29,7 +29,7 @@ npm run images    # rebuilds dish crops, stills, og.jpg and icons from media-src
 
 Vite, React, TypeScript, Framer Motion, HashRouter.
 
-`.github/workflows/deploy.yml` deploys every push to the default branch to GitHub Pages (Settings → Pages → Source: GitHub Actions). The build takes its base path and the absolute link-preview URLs from the Pages address, so it follows the repo name. Local builds default to `/kai-leicester/`.
+`.github/workflows/deploy.yml` deploys every push to `main` to GitHub Pages (Settings → Pages → Source: GitHub Actions). The build takes its base path and the absolute link-preview URLs from the Pages address, so it follows the repo name. Local builds default to `/kai-leicester/`.
 
 ## Media
 
