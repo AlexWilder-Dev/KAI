@@ -2,7 +2,7 @@
 
 A speculative website for KAI, the all-day brunch and pancake café at 4 St Martin's Square, Leicester. Built as a pitch: front end only, static data, no backend.
 
-**Live:** https://alexwilder-dev.github.io/kai-leicester/
+**Live:** https://alexwilder-dev.github.io/KAI/ (becomes `/kai-leicester/` if the repo is renamed to `kai-leicester`)
 
 ## What's in it
 
@@ -27,7 +27,9 @@ npm run build     # outputs dist/
 npm run images    # rebuilds dish crops, stills, og.jpg and icons from media-src/
 ```
 
-Vite, React, TypeScript, Framer Motion, HashRouter. Deployed to GitHub Pages under `/kai-leicester/` by `.github/workflows/deploy.yml` on push to `main`.
+Vite, React, TypeScript, Framer Motion, HashRouter.
+
+`.github/workflows/deploy.yml` deploys every push to the default branch to GitHub Pages (Settings → Pages → Source: GitHub Actions). The build takes its base path and the absolute link-preview URLs from the Pages address, so it follows the repo name. Local builds default to `/kai-leicester/`.
 
 ## Media
 
