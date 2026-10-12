@@ -1,0 +1,197 @@
+.sd__grid {
+  display: grid;
+  gap: 36px;
+}
+
+.sd__media {
+  position: relative;
+  padding-bottom: 64px;
+}
+
+.sd__main {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  box-shadow: var(--shadow-card);
+}
+.sd__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 50%;
+}
+
+.sd__plate {
+  position: absolute;
+  right: -6px;
+  bottom: 0;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid var(--paper);
+  box-shadow: 0 22px 40px -22px rgba(80, 50, 10, 0.55);
+}
+.sd__plate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.18);
+}
+
+.sd__title {
+  margin-top: 10px;
+}
+.sd__lede {
+  margin-top: 14px;
+}
+.sd__groups {
+  margin-top: 28px;
+  display: grid;
+}
+
+/* Three families, stacked like layers */
+.sdg {
+  position: relative;
+  border-radius: var(--r-md);
+  padding: 20px 20px 30px;
+  background: var(--batter);
+  box-shadow: 0 -12px 28px -20px rgba(80, 50, 10, 0.4);
+}
+.sdg + .sdg {
+  margin-top: -12px;
+}
+.sdg:last-child {
+  padding-bottom: 20px;
+}
+.sdg--avocado {
+  background: var(--marble);
+  margin-left: 10px;
+}
+.sdg--vegan {
+  background: var(--maple);
+  margin-right: 10px;
+  scroll-margin-top: 140px;
+}
+
+.sdg__title {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--maple-ink);
+}
+.sdg--vegan .sdg__title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-size: 22px;
+  font-weight: 560;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+}
+
+.sdg__opts {
+  margin-top: 6px;
+}
+.sdg__opt {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.sdg__opt:first-child {
+  border-top: 0;
+}
+.sdg__name {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-size: 20.5px;
+  font-weight: 560;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.sdg__note {
+  grid-column: 1;
+  font-size: 15.5px;
+  color: var(--crumb);
+}
+.sdg--vegan .sdg__note {
+  margin-top: 6px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.sdg__price {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 17px;
+}
+
+.sdg__veganhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+.sdg__tag {
+  margin-left: 8px;
+  background: var(--ink);
+  color: var(--maple);
+}
+
+@media (min-width: 900px) {
+  .sd__grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+  .sd__media {
+    position: sticky;
+    top: 120px;
+    padding-bottom: 90px;
+  }
+  .sd__main {
+    aspect-ratio: 4 / 5;
+  }
+  .sd__plate {
+    right: -40px;
+    width: 52%;
+    border-width: 8px;
+  }
+  .sd__groups {
+    margin-top: 36px;
+  }
+  .sdg {
+    padding: 26px 28px 38px;
+  }
+  .sdg:last-child {
+    padding-bottom: 26px;
+  }
+  .sdg__opts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 14px;
+  }
+  .sdg__opt {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 2px 16px 4px;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+  .sdg__opt:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .sdg__price {
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  .sdg__veganhead .sdg__price {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

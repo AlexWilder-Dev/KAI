@@ -1,0 +1,141 @@
+.tots__grid {
+  display: grid;
+  gap: 32px;
+}
+
+.tots__photos {
+  position: relative;
+  padding-bottom: 34%;
+}
+.tots__photo {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-card);
+}
+.tots__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tots__photo--a {
+  width: 74%;
+}
+.tots__photo--b {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  border: 6px solid var(--batter);
+}
+
+.tots__title {
+  margin-top: 10px;
+}
+.tots__lede {
+  margin-top: 14px;
+}
+.tots__lede .price {
+  font-weight: 600;
+}
+.tots__list {
+  margin-top: 24px;
+}
+
+/* ---------- Red Leicester callout ---------- */
+
+.rl {
+  position: relative;
+  margin-top: 56px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--batter);
+  box-shadow: 0 30px 60px -36px rgba(40, 20, 0, 0.7);
+  display: grid;
+}
+
+.rl__photo {
+  aspect-ratio: 16 / 9;
+}
+.rl__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.rl__body {
+  padding: 26px 22px 30px;
+}
+.rl .eyebrow {
+  color: rgba(250, 245, 236, 0.62);
+}
+
+.rl__title {
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(46px, 8.4vw, 104px);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+}
+.rl__title em {
+  font-style: normal;
+  color: var(--maple);
+}
+
+.rl__copy {
+  margin-top: 18px;
+  font-size: 17.5px;
+  line-height: 1.55;
+  max-width: 32em;
+  color: rgba(250, 245, 236, 0.86);
+  text-wrap: pretty;
+}
+
+.rl__dishes {
+  margin-top: 22px;
+  display: grid;
+  gap: 0 28px;
+}
+.rl__dishes li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-top: 1px solid rgba(250, 245, 236, 0.16);
+  font-size: 16px;
+}
+
+@media (min-width: 900px) {
+  .tots__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: center;
+  }
+  .tots__photos {
+    order: 2;
+  }
+  .tots__photo--b {
+    border-width: 8px;
+    right: -24px;
+  }
+  .rl {
+    margin-top: 96px;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    border-radius: 40px;
+  }
+  .rl__photo {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+  .rl__body {
+    padding: 56px 56px 52px;
+  }
+  .rl__dishes {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+  }
+}

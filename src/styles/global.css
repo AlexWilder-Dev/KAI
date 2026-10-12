@@ -1,0 +1,346 @@
+:root {
+  /* From the logo and the photos: warm black ink, white plates, cream ceramic, a pale marble table */
+  --ink: #16130f;
+  --ink-2: #2a241d;
+  --crumb: #6b5f54;
+  --paper: #ffffff;
+  --batter: #faf5ec;
+  --plate: #f2ece3;
+  --marble: #eeedea;
+  --line: rgba(22, 19, 15, 0.12);
+
+  /* The one accent: their maple amber */
+  --maple: #fbbf24;
+  --maple-deep: #e9a90c;
+  --maple-ink: #7a4b00;
+
+  --serif: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --sans: 'Jost Variable', 'Futura', 'Avenir Next', 'Century Gothic', system-ui, sans-serif;
+
+  --maxw: 1220px;
+  --pad: 20px;
+  --overlap: 30px;
+  --layer-inset: 6px;
+  --layer-r: 28px;
+  --r-lg: 24px;
+  --r-md: 18px;
+
+  --shadow-layer: 0 -1px 0 rgba(22, 19, 15, 0.04), 0 -20px 40px -28px rgba(80, 50, 10, 0.32);
+  --shadow-card: 0 1px 0 rgba(22, 19, 15, 0.04), 0 18px 40px -22px rgba(80, 50, 10, 0.35);
+  --ease: cubic-bezier(0.22, 0.8, 0.26, 1);
+
+  --bar-h: 0px;
+}
+
+@media (min-width: 760px) {
+  :root {
+    --pad: 48px;
+    --overlap: 44px;
+    --layer-inset: 14px;
+    --layer-r: 48px;
+    --r-lg: 32px;
+    --r-md: 22px;
+  }
+}
+@media (max-width: 899px) {
+  :root {
+    --bar-h: calc(66px + env(safe-area-inset-bottom));
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-bottom: var(--bar-h);
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--maple);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+::selection {
+  background: var(--maple);
+  color: var(--ink);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: top 0.3s var(--ease);
+}
+.skip:focus {
+  top: 12px;
+}
+
+/* ---------- Type ---------- */
+
+.display,
+.h2,
+.h3 {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.display {
+  font-size: clamp(42px, 8.6vw, 112px);
+  line-height: 0.98;
+}
+
+.h2 {
+  font-size: clamp(38px, 6.2vw, 80px);
+  line-height: 1;
+}
+
+.h3 {
+  font-size: clamp(25px, 2.6vw, 34px);
+  line-height: 1.08;
+  font-weight: 560;
+  letter-spacing: -0.012em;
+}
+
+/* The "EAT WELL" voice from the logo: thin, wide-tracked caps */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--crumb);
+}
+
+.lede {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 34em;
+  text-wrap: pretty;
+}
+
+.muted {
+  color: var(--crumb);
+}
+
+.price {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ---------- Layers: every section is a soft slab resting on the one before ---------- */
+
+.layer {
+  position: relative;
+  margin: calc(var(--overlap) * -1) var(--layer-inset) 0;
+  border-radius: var(--layer-r);
+  padding: calc(var(--overlap) + 52px) var(--pad) calc(var(--overlap) + 64px);
+  background: var(--layer-bg, var(--paper));
+  box-shadow: var(--shadow-layer);
+}
+
+@media (min-width: 760px) {
+  .layer {
+    padding-top: calc(var(--overlap) + 88px);
+    padding-bottom: calc(var(--overlap) + 104px);
+  }
+}
+
+.layer--batter {
+  --layer-bg: var(--batter);
+}
+.layer--ink {
+  --layer-bg: var(--ink);
+  color: var(--batter);
+}
+.layer--ink .eyebrow,
+.layer--ink .muted {
+  color: rgba(250, 245, 236, 0.62);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 16.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  background: var(--ink);
+  color: var(--paper);
+  transition:
+    transform 0.5s var(--ease),
+    box-shadow 0.5s var(--ease),
+    background-color 0.4s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -14px rgba(22, 19, 15, 0.55);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn svg {
+  flex: none;
+}
+
+.btn--maple {
+  background: var(--maple);
+  color: var(--ink);
+}
+.btn--maple:focus-visible {
+  outline-color: var(--ink);
+}
+
+.btn--line {
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+.btn--line:hover {
+  box-shadow:
+    inset 0 0 0 1.5px currentColor,
+    0 12px 24px -16px rgba(22, 19, 15, 0.4);
+}
+
+.btn--paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.link {
+  text-decoration: none;
+  background-image: linear-gradient(var(--maple), var(--maple));
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+  transition: background-size 0.4s var(--ease);
+}
+.link:hover {
+  background-size: 100% 100%;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  vertical-align: 0.2em;
+  background: var(--maple);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

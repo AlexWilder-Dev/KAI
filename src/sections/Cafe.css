@@ -1,0 +1,238 @@
+.cafe__head {
+  margin-bottom: 32px;
+}
+.cafe__head .h2 {
+  margin-top: 10px;
+}
+
+.cafe__photo {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--plate);
+}
+.cafe__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.note {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--r-md);
+  padding: 20px 22px 22px;
+  background: var(--batter);
+  box-shadow: var(--shadow-card);
+}
+.note p {
+  margin-top: 8px;
+  color: var(--ink-2);
+  font-size: 16px;
+  text-wrap: pretty;
+}
+.note .eyebrow {
+  margin: 0 0 8px;
+  color: var(--maple-ink);
+}
+.note__title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-size: clamp(23px, 2.3vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+/* The room */
+.cafe__photo--room {
+  aspect-ratio: 860 / 630;
+}
+.note--room {
+  margin: -56px 14px 0 34px;
+}
+
+/* Coffee: type with the pour set inline */
+.pour {
+  margin-top: 88px;
+}
+.pour__line {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(27px, 4.4vw, 60px);
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+  color: var(--crumb);
+  text-wrap: pretty;
+}
+.pour__line strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.pour__pic {
+  display: inline-block;
+  width: 2.3em;
+  height: 1.05em;
+  margin: 0 0.12em 0 0.26em;
+  border-radius: 999px;
+  overflow: hidden;
+  vertical-align: -0.16em;
+  box-shadow: 0 10px 20px -12px rgba(80, 50, 10, 0.6);
+}
+.pour__pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 62%;
+}
+
+/* Saturdays */
+.sat {
+  margin-top: 72px;
+  display: grid;
+  gap: 24px;
+}
+.sat__time {
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(110px, 24vw, 230px);
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  color: var(--maple);
+  -webkit-text-stroke: 0;
+}
+.sat__time span {
+  font-size: 0.32em;
+  letter-spacing: 0;
+  margin-left: 0.08em;
+  color: var(--ink);
+}
+.sat__title {
+  margin-top: 16px;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-size: clamp(25px, 2.6vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+.sat__copy {
+  margin-top: 10px;
+  color: var(--ink-2);
+  max-width: 28em;
+}
+.sat__photo {
+  aspect-ratio: 16 / 10;
+}
+.sat__photo img {
+  object-position: 50% 40%;
+}
+
+/* Instagram */
+.insta {
+  margin-top: 72px;
+  display: grid;
+  gap: 0;
+}
+.insta__photo {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  box-shadow: var(--shadow-card);
+}
+.insta__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+.insta__body {
+  position: relative;
+  margin: -48px 10px 0;
+  padding: 24px 22px 26px;
+  border-radius: var(--r-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-card);
+}
+.insta__tag {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(40px, 11vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  background-image: linear-gradient(var(--maple), var(--maple));
+  background-size: 100% 0.16em;
+  background-position: 0 92%;
+  background-repeat: no-repeat;
+  transition: background-size 0.6s var(--ease);
+}
+.insta__tag:hover {
+  background-size: 100% 0.5em;
+}
+.insta__copy {
+  margin: 14px 0 20px;
+  font-size: 17px;
+  color: var(--ink-2);
+  max-width: 30em;
+}
+
+@media (min-width: 900px) {
+  .cafe__head {
+    margin-bottom: 48px;
+  }
+  .cafe__room {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: end;
+  }
+  .cafe__photo--room {
+    grid-column: 1 / 9;
+    grid-row: 1;
+  }
+  .note--room {
+    grid-column: 8 / 12;
+    grid-row: 1;
+    margin: 0 0 -56px;
+    padding: 30px 32px 32px;
+  }
+
+  .pour {
+    margin-top: 130px;
+    max-width: 1100px;
+  }
+  .sat {
+    margin-top: 110px;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: end;
+    gap: clamp(40px, 6vw, 96px);
+  }
+
+  .insta {
+    margin-top: 120px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+  }
+  .insta__photo {
+    grid-column: 6 / 13;
+    grid-row: 1;
+    aspect-ratio: 16 / 11;
+  }
+  .insta__body {
+    grid-column: 1 / 8;
+    grid-row: 1;
+    margin: 0;
+    padding: 40px 44px 44px;
+    border-radius: var(--r-lg);
+    z-index: 1;
+  }
+}

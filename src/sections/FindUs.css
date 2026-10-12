@@ -1,0 +1,142 @@
+.find__grid {
+  display: grid;
+  gap: 40px;
+}
+
+.find__title {
+  margin-top: 10px;
+}
+.find__lede {
+  margin-top: 14px;
+}
+.find__dir {
+  margin-top: 22px;
+}
+
+.contact {
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+  font-size: 18px;
+}
+.contact li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact svg {
+  flex: none;
+  color: var(--crumb);
+}
+.contact__sep {
+  margin: 0 10px;
+  color: var(--crumb);
+}
+
+/* Hours: seven days stacked like pancakes, today pulled out of the stack */
+.hours {
+  position: relative;
+}
+
+.hours__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding: 0 4px 16px;
+}
+
+.hours__now {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.days {
+  display: grid;
+  padding-right: 18px;
+}
+
+.day {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 16px 18px 12px;
+  border-radius: 18px;
+  background: var(--batter);
+  font-size: 17px;
+  box-shadow: 0 -10px 20px -14px rgba(80, 50, 10, 0.45);
+  transition: transform 0.7s var(--ease);
+}
+.day + .day {
+  margin-top: -8px;
+}
+.day--1 {
+  background: var(--plate);
+  margin-left: 6px;
+  margin-right: -4px;
+}
+.day--2 {
+  margin-left: -3px;
+  margin-right: 5px;
+}
+
+.day.is-today {
+  z-index: 1;
+  background: var(--maple);
+  font-weight: 500;
+  transform: translateX(18px) rotate(-0.8deg);
+  box-shadow:
+    0 -10px 20px -14px rgba(80, 50, 10, 0.45),
+    0 16px 28px -16px rgba(120, 70, 0, 0.6);
+}
+
+.day__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.day__time {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.day__today {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--maple);
+}
+
+.day__note {
+  display: block;
+  font-size: 13.5px;
+  color: var(--crumb);
+}
+.is-today .day__note {
+  color: var(--ink);
+  opacity: 0.75;
+}
+
+@media (min-width: 900px) {
+  .find__grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: center;
+  }
+  .day {
+    min-height: 64px;
+    padding: 18px 22px 14px;
+    font-size: 18px;
+  }
+}

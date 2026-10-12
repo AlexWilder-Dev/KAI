@@ -1,0 +1,148 @@
+.reviews__head {
+  display: grid;
+  gap: 14px;
+}
+
+.score {
+  display: grid;
+  gap: 6px;
+}
+.score__big {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(96px, 22vw, 220px);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  color: var(--batter);
+}
+.score__star {
+  color: var(--maple);
+  font-size: 0.42em;
+  vertical-align: 0.95em;
+  margin-left: 0.06em;
+  letter-spacing: 0;
+}
+.score__label {
+  font-size: 18px;
+  color: rgba(250, 245, 236, 0.8);
+}
+.score__alt {
+  display: block;
+  margin-top: 4px;
+  font-size: 15.5px;
+  color: rgba(250, 245, 236, 0.58);
+}
+
+/* Three cards, stacked like layers */
+.quotes {
+  margin-top: 40px;
+  display: grid;
+}
+
+.quote {
+  position: relative;
+  border-radius: var(--r-lg);
+  padding: 22px 22px 24px;
+  color: var(--ink);
+  box-shadow: 0 -14px 34px -24px rgba(0, 0, 0, 0.7);
+  transition: transform 0.6s var(--ease);
+}
+.quote + .quote {
+  margin-top: -14px;
+}
+.quote--1 {
+  background: var(--batter);
+  margin-right: 22px;
+}
+.quote--2 {
+  background: var(--maple);
+  margin-left: 22px;
+}
+.quote--3 {
+  background: var(--paper);
+  margin-right: 12px;
+}
+
+.quote__mark {
+  width: 40px;
+  height: auto;
+  color: var(--maple);
+}
+.quote--2 .quote__mark {
+  color: var(--ink);
+}
+
+.quote__text {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(23px, 2.3vw, 30px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.quote__who {
+  margin-top: 16px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+@media (min-width: 900px) {
+  .reviews__head {
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: 40px;
+  }
+  .reviews__head .eyebrow {
+    grid-column: 1 / -1;
+  }
+  .score {
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: 28px;
+  }
+  .score__label {
+    padding-bottom: 18px;
+    font-size: 21px;
+  }
+
+  .quotes {
+    margin-top: 64px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    padding-bottom: 40px;
+  }
+  .quote {
+    padding: 34px 34px 36px;
+    min-height: 300px;
+    box-shadow: -18px 0 40px -28px rgba(0, 0, 0, 0.8);
+  }
+  .quote + .quote {
+    margin-top: 0;
+    margin-left: -28px;
+  }
+  .quote--1,
+  .quote--2,
+  .quote--3 {
+    margin-right: 0;
+  }
+  .quote + .quote--2 {
+    margin-top: 48px;
+  }
+  .quote + .quote--3 {
+    margin-top: 16px;
+  }
+  .quote:hover {
+    transform: translateY(-8px);
+    z-index: 2;
+  }
+  .quote__mark {
+    width: 52px;
+  }
+}
